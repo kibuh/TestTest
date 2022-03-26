@@ -62,7 +62,7 @@ public class MagazineService {
 
                 magazinRepository.save(magazine);
 
-                return modelMapper.map(exitProduct,ProductResponseModel.class);
+                return modelMapper.map(exitProduct.get(),ProductResponseModel.class);
             }
 
             Produit produit1 = productRepository.save(produit);

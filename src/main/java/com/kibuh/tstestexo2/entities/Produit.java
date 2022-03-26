@@ -1,15 +1,14 @@
 package com.kibuh.tstestexo2.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
+
+import java.util.Set;
 
 @Entity
 @Getter
@@ -28,10 +27,10 @@ public class Produit implements Serializable {
     @Column(nullable = false)
     private Double prix;
 
-//    @ManyToOne(fetch = FetchType.EAGER,optional = false, cascade = {CascadeType.ALL})
-//    @JoinColumn(name = "magazine_id")
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    @JsonIgnore
-//    private Magazine magazine;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = { CascadeType.PERSIST,CascadeType.MERGE},mappedBy = "produits")
+    private Set<Magazine> magazines;
+
 
 }

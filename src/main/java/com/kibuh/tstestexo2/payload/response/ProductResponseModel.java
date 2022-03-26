@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductResponseObject implements Serializable {
+public class ProductResponseModel implements Serializable {
 
     private long id;
     private String nomProduit;

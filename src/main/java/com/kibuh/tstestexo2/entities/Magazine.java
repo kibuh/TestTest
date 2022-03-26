@@ -11,19 +11,14 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Produit implements Serializable {
+@NoArgsConstructor
+public class Magazine implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private  int id;
 
     @Column(nullable = false)
-    private String nomProduit;
-
-    @Column(nullable = false)
-    private Double prix;
-
-
+    private String nom;
 }

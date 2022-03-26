@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "magazine")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -27,7 +28,7 @@ public class Magazine implements Serializable {
 
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(name = "magazine",
+    @JoinTable(name = "magazine_produits",
             joinColumns = {@JoinColumn(name = "magazine_id")},
             inverseJoinColumns = {@JoinColumn(name="produit_id")})
     private Set<Produit> produits= new HashSet<>();

@@ -31,13 +31,13 @@ public class MagazineController {
         return magazineService.getAllMagazine(page, limit);
     }
 
-    @PostMapping("/{ magazine_id}/add-produit")
+    @PostMapping("/{magazine_id}/add-produit")
     public ProductResponseModel addProduit(@PathVariable(" magazine_id") long magazine_id, @RequestBody Produit produit){
 
         return magazineService.addproduct(magazine_id,produit);
     }
 
-    @PostMapping("/{ magazine_id}/remove-produit")
+    @PostMapping("/{magazine_id}/remove-produit")
     public ResponseEntity removeProduit(@PathVariable(" magazine_id") long magazine_id, @RequestBody Produit produit){
 
         return magazineService.removeProduct(magazine_id,produit);

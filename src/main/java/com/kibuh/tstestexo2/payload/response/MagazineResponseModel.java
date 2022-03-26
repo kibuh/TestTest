@@ -12,5 +12,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MagazineResponseModel implements Serializable {
+    private long id;
     private String nom;
 }
